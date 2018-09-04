@@ -1,0 +1,21 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Houdini *.bgeo file attribute extractor
+//////////////////////////////////////////////////////////////////////////////////
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool
+loadfile(const string filename) {
+	if (!filename)
+		return false;
+
+	return true;
+}
+
+int main(int argv, char* argc[])
+{
+
+	return 0;
+}

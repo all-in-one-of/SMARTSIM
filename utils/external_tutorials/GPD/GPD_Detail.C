@@ -392,12 +392,15 @@ GPD_Detail::load(istream &is)
     unsigned		magic;
     char		tmpbuf [GPD_BUFSIZ];
 
+    bool result = UTread(is, &magic);
 
-    if (!UTread(is, &magic)) return -1;
-
-         if (magic == binaryMagic()) binary = 1;
-    else if (magic == asciiMagic())  binary = 0;
-    else return -1;
+    if (!result) return -1;
+    if (magic == binaryMagic()) 
+    	binary = 1;
+    else if (magic == asciiMagic())  
+    	binary = 0;
+    else 
+    	return -1;
 
     ascii(!binary);
 
